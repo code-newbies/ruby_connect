@@ -1,4 +1,5 @@
 require 'sinatra'
+require "sinatra/json"
 
 class Game
   attr_reader :board
