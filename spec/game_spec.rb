@@ -2,7 +2,7 @@ require 'game'
 
 module RubyConnect
   describe Game do
-    let(:game) { Game.new }
+    let(:game) { subject }
 
     it 'has an empty board' do
       expect(game.board.is_empty?).to be true
