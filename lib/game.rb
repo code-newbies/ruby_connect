@@ -1,9 +1,13 @@
-require 'sinatra'
+module RubyConnect
+  class Game
+    attr_reader :board
 
-class Game
-  attr_reader :board
+    def initialize
+      @board = Board.new
+    end
 
-  def initialize
-    @board = []
+    def is_done?
+
+    end
   end
 end
