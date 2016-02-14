@@ -5,7 +5,7 @@ module RubyConnect
     let(:game) { subject }
 
     it 'has an empty board' do
-      expect(game.board.is_empty?).to be true
+      expect(game.board).to be_empty
     end
 
     it 'can add one piece to the board'

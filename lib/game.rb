@@ -7,7 +7,7 @@ module RubyConnect
     end
 
     def is_done?
-      board.is_full?
+      board.full?
     end
   end
 end

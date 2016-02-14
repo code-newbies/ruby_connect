@@ -6,7 +6,7 @@ module RubyConnect
 
     context 'when a move is still not done' do
       it 'is empty' do
-        expect(board.is_empty?).to be true
+        expect(board).to be_empty
       end
     end
 
@@ -14,7 +14,7 @@ module RubyConnect
       before { board.insert_into_column 1, :red }
 
       it 'is not empty' do
-        expect(board.is_empty?).to be false
+        expect(board).to_not be_empty
       end
     end
 
@@ -29,7 +29,7 @@ module RubyConnect
       end
 
       it 'is full' do
-        expect(full_board.is_full?).to be true
+        expect(full_board).to be_full
       end
 
       it 'raises an error if you try to make a move' do

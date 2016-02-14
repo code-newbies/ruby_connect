@@ -8,11 +8,11 @@ module RubyConnect
       @grid = Array.new(ROWS) { Array.new COLUMNS, nil }
     end
 
-    def is_empty?
+    def empty?
       grid.map { |row| row.all? { |element| element.nil? } }.all?
     end
 
-    def is_full?
+    def full?
       grid.map { |row| row.all? }.all?
     end
 
