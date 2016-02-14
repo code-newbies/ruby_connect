@@ -6,7 +6,7 @@ module RubyConnect
       @board = Board.new
     end
 
-    def is_done?
+    def done?
       board.full?
     end
   end

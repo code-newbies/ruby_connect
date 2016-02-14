@@ -21,7 +21,7 @@ module RubyConnect
     context 'when all moves are done' do
       let(:full_board) do
         (1..Board::COLUMNS).each do |column|
-          (1..Board::ROWS).each do |row|
+          (1..Board::ROWS).each do
             board.insert_into_column column, :red
           end
         end
