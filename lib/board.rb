@@ -24,9 +24,7 @@ module RubyConnect
     private
 
     def first_free_row_for(column)
-      ROWS.times do |row| 
-        return row if grid[row][column].nil?
-      end
+      ROWS.times { |row| return row if grid[row][column].nil? }
       raise ArgumentError, "Column full"
     end
   end
