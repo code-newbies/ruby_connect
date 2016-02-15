@@ -9,11 +9,11 @@ module RubyConnect
     end
 
     def empty?
-      grid.map { |row| row.all? { |element| element.nil? } }.all?
+      grid.flatten.compact.empty?
     end
 
     def full?
-      grid.map { |row| row.all? }.all?
+      grid.flatten.all?
     end
 
     def insert_into_column(column, color)
