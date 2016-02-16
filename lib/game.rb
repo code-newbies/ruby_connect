@@ -1,5 +1,3 @@
-require 'sinatra'
-
 class Game
   attr_reader :board
 

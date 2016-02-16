@@ -1,0 +1,5 @@
+gem 'sinatra'
+gem 'sinatra-contrib'
+#require 'sinatra/json'
+gem 'twilio-ruby'
+gem 'rest-client'
