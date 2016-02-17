@@ -4,10 +4,6 @@ module RubyConnect
   describe Game do
     let(:game) { subject }
 
-    it 'has an empty board' do
-      expect(game.board).to be_empty
-    end
-
     it 'can add one piece to the board'
     it 'switches player turns after one move'
 
