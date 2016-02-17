@@ -1,31 +1,35 @@
 module RubyConnect
   class Board
     attr_reader :grid
+    ROWS    = 6
     COLUMNS = 7
-    ROWS = 6
 
     def initialize
-      @grid = Array.new(ROWS) { Array.new COLUMNS, nil }
+      @grid = Array.new(COLUMNS) { Array.new ROWS, nil }
     end
 
     def empty?
-      grid.flatten.compact.empty?
+      elements.compact.empty?
     end
 
     def full?
-      grid.flatten.all?
+      elements.all?
     end
 
     def insert_into_column(column, color)
       column -= 1
-      grid[first_free_row_for column][column] = color
+      row = first_slot column
+      grid[column][row] = color
     end
 
     private
 
-    def first_free_row_for(column)
-      ROWS.times { |row| return row if grid[row][column].nil? }
-      raise ArgumentError, "Column full"
+    def first_slot(column)
+      grid[column].index(nil) || raise(ArgumentError, "Column full")
+    end
+
+    def elements
+      grid.flatten
     end
   end
 end

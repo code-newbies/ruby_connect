@@ -4,13 +4,13 @@ module RubyConnect
   describe Board do
     let(:board) { subject }
 
-    context 'when a move is still not done' do
+    context 'when no player selected a column yet' do
       it 'is empty' do
         expect(board).to be_empty
       end
     end
 
-    context 'when a move is done' do
+    context 'when a player selects a column' do
       before { board.insert_into_column 1, :red }
 
       it 'is not empty' do
@@ -18,10 +18,10 @@ module RubyConnect
       end
     end
 
-    context 'when all moves are done' do
+    context 'when every slot is taken up' do
       let(:full_board) do
         (1..Board::COLUMNS).each do |column|
-          (1..Board::ROWS).each do
+          (1..Board::ROWS).each do |row|
             board.insert_into_column column, :red
           end
         end
@@ -32,7 +32,7 @@ module RubyConnect
         expect(full_board).to be_full
       end
 
-      it 'raises an error if you try to make a move' do
+      it 'raises an error if you try to select a column' do
         expect{ full_board.insert_into_column 1, :red }.to raise_error(ArgumentError)
       end
     end
