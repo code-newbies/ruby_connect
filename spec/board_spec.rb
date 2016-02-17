@@ -21,9 +21,7 @@ module RubyConnect
     context 'when every slot is taken up' do
       let(:full_board) do
         (1..Board::COLUMNS).each do |column|
-          (1..Board::ROWS).each do |row|
-            board.insert_into_column column, :red
-          end
+          Board::ROWS.times { board.insert_into_column column, :red }
         end
         board
       end
