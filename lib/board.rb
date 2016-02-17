@@ -9,26 +9,26 @@ module RubyConnect
     end
 
     def empty?
-      elements.compact.empty?
+      slots.compact.empty?
     end
 
     def full?
-      elements.all?
+      slots.all?
     end
 
     def insert_into_column(column, color)
       column -= 1
-      row = first_slot column
+      row = first_open_slot column
       grid[column][row] = color
     end
 
     private
 
-    def first_slot(column)
+    def first_open_slot(column)
       grid[column].index(nil) || raise(ArgumentError, "Column full")
     end
 
-    def elements
+    def slots
       grid.flatten
     end
   end
