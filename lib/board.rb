@@ -24,12 +24,13 @@ module RubyConnect
 
     private
 
-    def first_open_slot(column)
-      grid[column].index(nil) || raise(ArgumentError, "Column full")
-    end
+      def first_open_slot(column)
+        grid[column].index(nil) || raise(ArgumentError, "Column full")
+      end
 
-    def slots
-      grid.flatten
-    end
+      def slots
+        grid.flatten
+      end
   end
+
 end
