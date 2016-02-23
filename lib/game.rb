@@ -1,3 +1,5 @@
+require 'board'
+
 module RubyConnect
   class Game
     attr_reader :board

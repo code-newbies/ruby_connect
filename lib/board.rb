@@ -32,4 +32,5 @@ module RubyConnect
       grid.flatten
     end
   end
+
 end
