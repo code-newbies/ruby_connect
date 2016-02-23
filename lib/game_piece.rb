@@ -1,5 +1,5 @@
 module RubyConnect
-
+  
   class GamePiece
     attr_reader :color, :board
 
@@ -9,7 +9,6 @@ module RubyConnect
     end
 
     def drop_in(column)
-      # need to figure out how to relate board...
       board.insert_into_column(column, color)
     end
   
