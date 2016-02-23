@@ -30,7 +30,7 @@ module RubyConnect
 
     def slots
       grid.flatten
-      end
+    end
   end
 
 end
