@@ -1,5 +1,3 @@
 module RubyConnect
-  class GameOverError < StandardError 
-
-  end
+  class GameOverError < StandardError; end
 end

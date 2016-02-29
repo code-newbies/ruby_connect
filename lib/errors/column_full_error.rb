@@ -1,5 +1,3 @@
 module RubyConnect
-  class ColumnFullError < StandardError 
-
-  end
+  class ColumnFullError < StandardError; end
 end

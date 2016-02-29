@@ -1,4 +1,4 @@
-require 'player'
+require 'models/player'
 
 module RubyConnect
   describe Player do

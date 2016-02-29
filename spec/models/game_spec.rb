@@ -1,5 +1,5 @@
-require 'game'
-require 'board'
+require 'models/game'
+require 'models/board'
 
 module RubyConnect
   describe Game do

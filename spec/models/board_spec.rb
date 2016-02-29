@@ -1,4 +1,4 @@
-require 'board'
+require 'models/board'
 
 module RubyConnect
   describe Board do
