@@ -1,3 +1,5 @@
+require 'errors/column_full_error'
+
 module RubyConnect
   class Board
     attr_reader :grid
@@ -16,6 +18,10 @@ module RubyConnect
       slots.all?
     end
 
+    def moves_done
+      slots.compact.count
+    end
+
     def insert_into_column(column, color)
       column -= 1
       row = first_open_slot column
@@ -25,7 +31,7 @@ module RubyConnect
     private
 
     def first_open_slot(column)
-      grid[column].index(nil) || raise(ArgumentError, "Column full")
+      grid[column].index(nil) || raise(ColumnFullError, "Column full")
     end
 
     def slots
