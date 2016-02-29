@@ -2,7 +2,7 @@ require 'errors/game_over_error'
 
 module RubyConnect
   class Game
-    attr_reader :board
+    attr_accessor :board, :winning_move
 
     def initialize(player1, player2)
       @board = Board.new
@@ -12,13 +12,13 @@ module RubyConnect
     end
 
     def done?
-      board.full? || @winning_move
+      board.full? || winning_move
     end
 
     def make_move(column, color)
       raise GameOverError if done?
       board.insert_into_column column, color
-      @winning_move = false # TODO: winning_move?
+      winning_move = false # TODO: winning_move?
     end
   end
 end
