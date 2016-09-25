@@ -1,4 +1,4 @@
-require 'board'
+require 'models/board'
 
 module RubyConnect
   describe Board do
@@ -31,7 +31,7 @@ module RubyConnect
       end
 
       it 'raises an error if you try to select a column' do
-        expect{ full_board.insert_into_column 1, :red }.to raise_error(ArgumentError)
+        expect{ full_board.insert_into_column 1, :red }.to raise_error(ColumnFullError)
       end
     end
   end
